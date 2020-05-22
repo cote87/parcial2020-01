@@ -1,5 +1,8 @@
 package isi.died2020.parcial01.ejercicio02.app;
 
+import java.util.List;
+
+import isi.died2020.parcial01.ejercicio02.db.ErrorIngresandoDBException;
 import isi.died2020.parcial01.ejercicio02.dominio.*;
 
 
@@ -17,8 +20,9 @@ public interface MySysAcad {
 	 * crea una nueva instancia de Inscripcion y 
 	 * asigna la inscripcion a la lista de inscripciones del alumno, 
 	 * de la materia y del docente
+	 * @throws ErrorIngresandoDBException 
 	 */
-	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo);
+	public void inscribirAlumnoCursada(Docente d,Alumno a, Materia m,Integer cicloLectivo) throws ErrorIngresandoDBException;
 
 	/**
 	 * crea una nueva instancia de Inscripcion y 
@@ -26,6 +30,12 @@ public interface MySysAcad {
 	 * de la materia y del docente
 	 */
 	public void inscribirAlumnoExamen(Docente d,Alumno a, Materia m);
+	
+	public void registrarNota(Examen e, Integer nota);
+	
+	public Double promedioAprobados(Materia m);
+	
+	public List<Alumno> inscriptos(Materia m,Integer ciclo);
 	
 
 }

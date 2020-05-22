@@ -48,5 +48,15 @@ public class Alumno {
 		this.materiasCursadas.add(e);
 		e.setInscripto(this);
 	}
+	
+	public List<Inscripcion> getMateriasCursadas() {
+		return materiasCursadas;
+	}
+
+
+	public Object compareTo(Alumno a2) {
+		// TODO Auto-generated method stub
+		return this.getNombre().compareTo(a2.getNombre());
+	}
 
 }

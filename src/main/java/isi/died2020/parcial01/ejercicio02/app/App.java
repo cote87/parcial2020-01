@@ -3,6 +3,7 @@ package isi.died2020.parcial01.ejercicio02.app;
 import java.util.ArrayList;
 import java.util.List;
 
+import isi.died2020.parcial01.ejercicio02.db.ErrorIngresandoDBException;
 import isi.died2020.parcial01.ejercicio02.dominio.Alumno;
 import isi.died2020.parcial01.ejercicio02.dominio.Docente;
 import isi.died2020.parcial01.ejercicio02.dominio.Materia;
@@ -89,7 +90,11 @@ public class App {
 
 
 		
-		sistema.inscribirAlumnoCursada(prof1, a1, m1,2020);
+		try {
+			sistema.inscribirAlumnoCursada(prof1, a1, m1,2020);
+		} catch (ErrorIngresandoDBException e) {
+			System.out.println(e.getMessage());
+		}
 
 		sistema.inscribirAlumnoExamen(prof1, a1, m1);
 	}
