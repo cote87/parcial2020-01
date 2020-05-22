@@ -46,6 +46,7 @@ public class MySysAcadImpl implements MySysAcad {
 		m.addInscripcion(insc);
 		// DESCOMENTAR Y gestionar excepcion
 		try {
+			//No llegue a implementar verificar las correlativas
 			DB.guardar(insc);
 		} catch (BaseDeDatosExcepcion e) {
 			throw new ErrorIngresandoDBException();
